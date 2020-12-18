@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
-import { HttpResponse } from '@angular/common/http';
+import { HttpResponse, JsonpClientBackend } from '@angular/common/http';
 import { AlarmEvent } from '../alarm-event';
 
 @Component({
@@ -10,18 +10,23 @@ import { AlarmEvent } from '../alarm-event';
 })
 export class HomeComponent implements OnInit {
 
-  event: AlarmEvent;
+  events: AlarmEvent[] = [];
+
+  titles = ["ID", "User", "State", "Date"];
+
+  headers = ["event_id", "user", "state", "created_time"];
 
   constructor(private apiService: ApiService) { 
-    this.event = new AlarmEvent();
-    this.event.user = "Begin";
   }
   
-  ngOnInit() {
-		this.apiService.sendGetRequest().subscribe((data: any)=>{  
-      console.log(data);
-      this.event = data;
-		})  
+  ngOnInit(): void {
+    this.apiService.sendGetRequest().subscribe((data: AlarmEvent[]) => {
+      this.events = JSON.parse(data.toString());
+      for(var event of this.events) {
+        console.log(event)
+      }
+      console.log(this.events);
+    })
 	}
 
 }

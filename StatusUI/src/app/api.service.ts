@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { throwError } from 'rxjs';
-import { map, retry, catchError, tap } from 'rxjs/operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -10,29 +8,15 @@ export class ApiService {
 
   private SERVER_URL = "http://localhost:5000/alarmEvent";
 
-  constructor(private httpClient: HttpClient) { }
 
-  handleError(error: HttpErrorResponse) {
-    let errorMessage = 'Unknown error!';
-    if (error.error instanceof ErrorEvent) {
-      // Client-side errors
-      errorMessage = `Error: ${error.error.message}`;
-    } else {
-      // Server-side errors
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    window.alert(errorMessage);
-    return throwError(errorMessage);
-  }
+  constructor(private httpClient: HttpClient) { };
 
-  public sendGetRequest() {
-      return this.httpClient.get(this.SERVER_URL).
-      pipe(
-        map((data: Event) => {
-          return data;
-        }), catchError( error => {
-          return throwError("Something went wrong");
-        })
-      )
+  public sendGetRequest(){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Cache-control': 'no-cache'
+      })};
+    return this.httpClient.get(this.SERVER_URL);
   }
 }

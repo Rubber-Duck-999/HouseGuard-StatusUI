@@ -8,7 +8,7 @@
     </th>
   </tr>
 
-  <tr *ngFor="let event of events">
+  <tr *ngFor="let event of received.events">
     <td *ngFor = "let column of headers">
       {{event[column]}}
     </td>

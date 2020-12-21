@@ -1,10 +1,10 @@
 
-export class AlarmEvent {
+export class Statuses {
     length: number;
-    events: Event[];
+    status: Status[];
 }
 
-export class Event {
+export class Status {
     user: string;
     state: string;
     created_time: string;

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
+import { DailyStatus } from './daily-status';
 
 @Component({
   selector: 'app-daily-status',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DailyStatusComponent implements OnInit {
 
-  constructor() { }
+  titles = ["ID", "User", "State", "Date"];
 
-  ngOnInit(): void {
+  headers = ["event_id", "user", "state", "created_time"];
+
+  received: DailyStatus;
+
+  constructor(private apiService: ApiService) {
+    this.received = new DailyStatus();
   }
-
+  
+  ngOnInit(): void {
+    this.apiService.getDailyStatus().subscribe(res => {
+      this.received = res;
+      console.log(this.received)
+    })
+	}
 }

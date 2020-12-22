@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
+import { DailyStatus } from '../daily-status/daily-status';
+import { Statuses } from './status';
 
 @Component({
   selector: 'app-status',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatusComponent implements OnInit {
 
-  constructor() { }
+  received: Statuses;
 
-  ngOnInit(): void {
+  constructor(private apiService: ApiService) {
+    this.received = new Statuses();
   }
+  
+  ngOnInit(): void {
+    this.apiService.getStatus().subscribe(res => {
+      this.received = res;
+      console.log(this.received)
+    })
+	}
 
 }

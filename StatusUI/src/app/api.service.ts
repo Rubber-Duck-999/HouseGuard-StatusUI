@@ -2,14 +2,17 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { AlarmEvent } from './alarm-event/alarm-event';
+import { DailyStatus } from './daily-status/daily-status';
+import { Statuses } from './status/status';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  private SERVER_URL = "http://localhost:5000/alarmEvent";
-
+  private EVENT_URL = "http://localhost:5000/alarmEvent";
+  private STATUS_URL = "http://localhost:5000/status";
+  private DAILY_URL = "http://localhost:5000/dailyStatus";
 
   constructor(private httpClient: HttpClient) { };
 
@@ -35,24 +38,24 @@ export class ApiService {
         'Content-Type':  'application/json',
         'Cache-control': 'no-cache'
       })};
-    return this.httpClient.get<AlarmEvent>(this.SERVER_URL);
+    return this.httpClient.get<AlarmEvent>(this.EVENT_URL);
   }
 
-  public getStatus(): Observable<AlarmEvent> {
+  public getStatus(): Observable<Statuses> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         'Cache-control': 'no-cache'
       })};
-    return this.httpClient.get<AlarmEvent>(this.SERVER_URL);
+    return this.httpClient.get<Statuses>(this.STATUS_URL);
   }
 
-  public getDailyStatus(): Observable<AlarmEvent> {
+  public getDailyStatus(): Observable<DailyStatus> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         'Cache-control': 'no-cache'
       })};
-    return this.httpClient.get<AlarmEvent>(this.SERVER_URL);
+    return this.httpClient.get<DailyStatus>(this.DAILY_URL);
   }
 }

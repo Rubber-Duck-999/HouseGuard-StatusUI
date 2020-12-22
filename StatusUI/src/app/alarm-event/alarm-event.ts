@@ -8,5 +8,5 @@ export class Event {
     user: string;
     state: string;
     created_time: string;
-    event_id: string;
+    event_id: number;
 }

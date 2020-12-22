@@ -1,0 +1,16 @@
+<h1>Alarm State Table</h1>
+<hr>
+
+<table id="events">
+  <tr>
+    <th *ngFor = "let column of titles">
+      {{[column]}}
+    </th>
+  </tr>
+
+  <tr *ngFor="let event of received.events">
+    <td *ngFor = "let column of headers">
+      {{event[column]}}
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,16 @@
+<h1>Fault Table</h1>
+<hr>
+
+<table id="faults">
+  <tr>
+    <th *ngFor = "let column of titles">
+      {{[column]}}
+    </th>
+  </tr>
+
+  <tr *ngFor="let fault of received.fault">
+    <td *ngFor = "let column of headers">
+      {{fault[column]}}
+    </td>
+  </tr>
+</table>

@@ -2,18 +2,26 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { AlarmEvent } from './alarm-event/alarm-event';
-import { DailyStatus } from './daily-status/daily-status';
-import { Statuses } from './status/status';
+import { Faults } from './faults/faults';
+import { Hardwares } from './hardware/hardware';
+import { Accesses } from './access/access';
+import { Motions } from './motion/motion';
+import { Devices } from './device/devices';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  private EVENT_URL = "https://9p0rr7ytga.execute-api.eu-west-2.amazonaws.com/dev/alarmEvent";
-  private STATUS_URL = "https://9p0rr7ytga.execute-api.eu-west-2.amazonaws.com/dev/status";
-  private DAILY_URL = "https://9p0rr7ytga.execute-api.eu-west-2.amazonaws.com/dev/dailyStatus";
-  private LOCAL_URL = "http://localhost:6649";
+  private BASE_URL = "https://9p0rr7ytga.execute-api.eu-west-2.amazonaws.com/dev/";
+  private EVENT_URL = this.BASE_URL + "alarmEvent";
+  private STATUS_URL = this.BASE_URL + "status";
+  private DAILY_URL = this.BASE_URL + "status";
+  private MOTION_URL = this.BASE_URL + "motion";
+  private ACCESS_URL = this.BASE_URL + "access";
+  private FAULT_URL = this.BASE_URL + "fault";
+  private HARDWARE_URL = this.BASE_URL + "hardware";
+  private DEVICE_URL = this.BASE_URL + "device";
 
   constructor(private httpClient: HttpClient) { };
 
@@ -42,21 +50,48 @@ export class ApiService {
     return this.httpClient.get<AlarmEvent>(this.EVENT_URL);
   }
 
-  public getStatus(): Observable<Statuses> {
+  public getFault(): Observable<Faults> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         'Cache-control': 'no-cache'
       })};
-    return this.httpClient.get<Statuses>(this.STATUS_URL);
+    return this.httpClient.get<Faults>(this.FAULT_URL);
   }
 
-  public getDailyStatus(): Observable<DailyStatus> {
+  public getHardwares(): Observable<Hardwares> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         'Cache-control': 'no-cache'
       })};
-    return this.httpClient.get<DailyStatus>(this.DAILY_URL);
+    return this.httpClient.get<Hardwares>(this.HARDWARE_URL);
+  }
+
+  public getAccess(): Observable<Accesses> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Cache-control': 'no-cache'
+      })};
+    return this.httpClient.get<Accesses>(this.ACCESS_URL);
+  }
+
+  public getMotions(): Observable<Motions> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Cache-control': 'no-cache'
+      })};
+    return this.httpClient.get<Motions>(this.MOTION_URL);
+  }
+
+  public getDevice(): Observable<Devices> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Cache-control': 'no-cache'
+      })};
+    return this.httpClient.get<Devices>(this.DEVICE_URL);
   }
 }

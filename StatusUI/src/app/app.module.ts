@@ -9,11 +9,14 @@ import { AboutComponent } from './about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AlarmEventComponent } from './alarm-event/alarm-event.component';
-import { DailyStatusComponent } from './daily-status/daily-status.component';
-import { StatusComponent } from './status/status.component';
 import { MaterialModule } from './material.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import { LocalComponent } from './local/local.component';
+import { FaultComponent } from './faults/fault.component';
+import { MotionComponent } from './motion/motion.component';
+import { HardwareComponent } from './hardware/hardware.component';
+import { AccessComponent } from './access/access.component';
+import { DeviceComponent } from './device/device.component';
+
 
 @NgModule({
   declarations: [
@@ -21,9 +24,11 @@ import { LocalComponent } from './local/local.component';
     HomeComponent,
     AboutComponent,
     AlarmEventComponent,
-    DailyStatusComponent,
-    StatusComponent,
-    LocalComponent
+    FaultComponent,
+    MotionComponent,
+    HardwareComponent,
+    AccessComponent,
+    DeviceComponent,
   ],
   imports: [
     BrowserModule,

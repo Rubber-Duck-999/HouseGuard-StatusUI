@@ -1,0 +1,16 @@
+<h1>Access Table</h1>
+<hr>
+
+<table id="accesses">
+  <tr>
+    <th *ngFor = "let column of titles">
+      {{[column]}}
+    </th>
+  </tr>
+
+  <tr *ngFor="let access of received.access">
+    <td *ngFor = "let column of headers">
+      {{access[column]}}
+    </td>
+  </tr>
+</table>

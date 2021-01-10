@@ -1,0 +1,28 @@
+h1
+{
+    text-align: center;
+    color: black;
+}
+
+#hardwares {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #hardwares td, #hardwares th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #hardwares tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #hardwares tr:hover {background-color: #ddd;}
+  
+  #hardwares th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: black;
+    color: white;
+  }

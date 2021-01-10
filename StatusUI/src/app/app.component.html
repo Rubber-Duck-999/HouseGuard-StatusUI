@@ -39,14 +39,29 @@
       <span class="label">Events</span>
     </a>
     <a mat-list-item
-      routerLink="/dailyStatus">
+      routerLink="/access">
       <mat-icon class="icon">date_range</mat-icon>
-      <span class="label">Daily Status</span>
+      <span class="label">Access</span>
     </a>
     <a mat-list-item
-       routerLink="/status">
+       routerLink="/faults">
       <mat-icon class="icon">priority_high</mat-icon>
-      <span class="label">Current Status</span>
+      <span class="label">Faults</span>
+    </a>
+    <a mat-list-item
+        routerLink="/hardware">
+      <mat-icon class="icon">priority_high</mat-icon>
+      <span class="label">Hardware</span>
+    </a>
+    <a mat-list-item
+       routerLink="/motion">
+      <mat-icon class="icon">priority_high</mat-icon>
+      <span class="label">Motion</span>
+    </a>
+    <a mat-list-item
+        routerLink="/device">
+      <mat-icon class="icon">priority_high</mat-icon>
+      <span class="label">Devices</span>
     </a>
     <a  mat-list-item type="button">
       <mat-icon class="icon">input</mat-icon>
@@ -81,23 +96,42 @@
               </a>
             </li>
             <li>
-                <a routerLink="/events">
-                    <mat-icon class="icon">events</mat-icon>
-                    <span class="label">Events</span>
-                </a>
-              </li>
+              <a routerLink="/events">
+                  <mat-icon class="icon">events</mat-icon>
+                  <span class="label">Events</span>
+              </a>
+            </li>
+            <li>
+              <a routerLink="/access">
+                  <mat-icon class="icon">events</mat-icon>
+                  <span class="label">Access</span>
+              </a>
+            </li> 
+            <li>
+              <a routerLink="/device">
+                  <mat-icon class="icon">events</mat-icon>
+                  <span class="label">Device</span>
+              </a>
+            </li>
+            <li>
+              <a routerLink="/faults">
+                  <mat-icon class="icon">events</mat-icon>
+                  <span class="label">Faults</span>
+              </a>
+            </li>
+            <li>
+              <a routerLink="/hardware">
+                  <mat-icon class="icon">events</mat-icon>
+                  <span class="label">Hardware</span>
+              </a>
+            </li> 
+            <li>
+              <a routerLink="/motion">
+                  <mat-icon class="icon">events</mat-icon>
+                  <span class="label">Motion</span>
+              </a>
+            </li> 
               <li>
-                <a routerLink="/dailyStatus">
-                    <mat-icon class="icon">date_range</mat-icon>
-                    <span class="label">Daily</span>
-                </a>
-              </li>
-              <li>
-                <a routerLink="/status">
-                    <mat-icon class="icon">priority_high</mat-icon>
-                    <span class="label">Status</span>
-                </a>
-              </li>
         </ul>
      </div>
     </mat-toolbar>

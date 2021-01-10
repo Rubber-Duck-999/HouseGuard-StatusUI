@@ -1,0 +1,16 @@
+<h1>Hardware Table</h1>
+<hr>
+
+<table id="hardwares">
+  <tr>
+    <th *ngFor = "let column of titles">
+      {{[column]}}
+    </th>
+  </tr>
+
+  <tr *ngFor="let hardware of received.hardware">
+    <td *ngFor = "let column of headers">
+      {{hardware[column]}}
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,16 @@
+<h1>Motion Table</h1>
+<hr>
+
+<table id="motions">
+  <tr>
+    <th *ngFor = "let column of titles">
+      {{[column]}}
+    </th>
+  </tr>
+
+  <tr *ngFor="let motion of received.motion">
+    <td *ngFor = "let column of headers">
+      {{motion[column]}}
+    </td>
+  </tr>
+</table>

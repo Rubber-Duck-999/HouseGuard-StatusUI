@@ -1,16 +1,16 @@
-<h1>Status Table</h1>
+<h1>Device Table</h1>
 <hr>
 
-<table id="statuses">
+<table id="devices">
   <tr>
     <th *ngFor = "let column of titles">
       {{[column]}}
     </th>
   </tr>
 
-  <tr *ngFor="let status of received.status">
+  <tr *ngFor="let device of received.devices">
     <td *ngFor = "let column of headers">
-      {{status[column]}}
+      {{device[column]}}
     </td>
   </tr>
 </table>

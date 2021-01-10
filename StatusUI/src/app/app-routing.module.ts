@@ -3,16 +3,22 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { AlarmEventComponent } from './alarm-event/alarm-event.component';
-import { DailyStatusComponent } from './daily-status/daily-status.component';
-import { StatusComponent } from './status/status.component';
+import { AccessComponent } from './access/access.component';
+import { FaultComponent } from './faults/fault.component';
+import { HardwareComponent } from './hardware/hardware.component';
+import { MotionComponent } from './motion/motion.component';
+import { DeviceComponent } from './device/device.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'events', component: AlarmEventComponent },
-  { path: 'dailyStatus', component: DailyStatusComponent },
-  { path: 'status', component: StatusComponent },
+  { path: 'access', component: AccessComponent },
+  { path: 'device', component: DeviceComponent },
+  { path: 'faults', component: FaultComponent },
+  { path: 'hardware', component: HardwareComponent },
+  { path: 'motion', component: MotionComponent },  
 ];
 
 @NgModule({

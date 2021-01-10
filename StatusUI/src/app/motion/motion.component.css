@@ -1,0 +1,28 @@
+h1
+{
+    text-align: center;
+    color: black;
+}
+
+#motions {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #motions td, #motions th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #motions tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #motions tr:hover {background-color: #ddd;}
+  
+  #motions th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: black;
+    color: white;
+  }

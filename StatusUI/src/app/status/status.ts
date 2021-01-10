@@ -5,8 +5,8 @@ export class Statuses {
 }
 
 export class Status {
-    created_date: string;
     status_id: string;
+    created_date: string;
     motion_detected: string;
     access_granted: string;
     access_denied: string;

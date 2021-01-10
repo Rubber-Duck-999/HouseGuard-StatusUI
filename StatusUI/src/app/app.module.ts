@@ -13,6 +13,7 @@ import { DailyStatusComponent } from './daily-status/daily-status.component';
 import { StatusComponent } from './status/status.component';
 import { MaterialModule } from './material.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { LocalComponent } from './local/local.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     AboutComponent,
     AlarmEventComponent,
     DailyStatusComponent,
-    StatusComponent
+    StatusComponent,
+    LocalComponent
   ],
   imports: [
     BrowserModule,

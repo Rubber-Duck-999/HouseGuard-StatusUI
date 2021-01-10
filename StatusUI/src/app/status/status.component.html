@@ -1,1 +1,16 @@
-<p>status works!</p>
+<h1>Status Table</h1>
+<hr>
+
+<table id="statuses">
+  <tr>
+    <th *ngFor = "let column of titles">
+      {{[column]}}
+    </th>
+  </tr>
+
+  <tr *ngFor="let status of received.status">
+    <td *ngFor = "let column of headers">
+      {{status[column]}}
+    </td>
+  </tr>
+</table>

@@ -10,9 +10,10 @@ import { Statuses } from './status/status';
 })
 export class ApiService {
 
-  private EVENT_URL = "http://localhost:5000/alarmEvent";
-  private STATUS_URL = "http://localhost:5000/status";
-  private DAILY_URL = "http://localhost:5000/dailyStatus";
+  private EVENT_URL = "https://9p0rr7ytga.execute-api.eu-west-2.amazonaws.com/dev/alarmEvent";
+  private STATUS_URL = "https://9p0rr7ytga.execute-api.eu-west-2.amazonaws.com/dev/status";
+  private DAILY_URL = "https://9p0rr7ytga.execute-api.eu-west-2.amazonaws.com/dev/dailyStatus";
+  private LOCAL_URL = "http://localhost:6649";
 
   constructor(private httpClient: HttpClient) { };
 

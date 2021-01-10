@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
-import { DailyStatus } from '../daily-status/daily-status';
 import { Statuses } from './status';
 
 @Component({
@@ -9,6 +8,12 @@ import { Statuses } from './status';
   styleUrls: ['./status.component.css']
 })
 export class StatusComponent implements OnInit {
+
+  titles = ["ID", "Created Date", "Motion Detected", "Access Granted", "Access Denied",
+            "Last Fault", "Last User", "CPU Temperature", "CPU Usage", "Memory Left"];
+
+  headers = ["status_id", "created_date", "motion_detected", "access_granted", "access_denied", 
+             "last_fault", "last_user", "cpu_temp", "cpu_usage", "memory"];
 
   received: Statuses;
 

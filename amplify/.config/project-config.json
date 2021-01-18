@@ -1,0 +1,17 @@
+{
+  "projectName": "HouseGuardStatusUI",
+  "version": "3.0",
+  "frontend": "javascript",
+  "javascript": {
+    "framework": "angular",
+    "config": {
+      "SourceDir": "src",
+      "DistributionDir": "dist/StatusUI",
+      "BuildCommand": "npm run-script build",
+      "StartCommand": "ng serve"
+    }
+  },
+  "providers": [
+    "awscloudformation"
+  ]
+}

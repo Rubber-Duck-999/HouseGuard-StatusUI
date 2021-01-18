@@ -10,13 +10,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AlarmEventComponent } from './alarm-event/alarm-event.component';
 import { MaterialModule } from './material.module';
-import {FlexLayoutModule} from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { FaultComponent } from './faults/fault.component';
 import { MotionComponent } from './motion/motion.component';
 import { HardwareComponent } from './hardware/hardware.component';
 import { AccessComponent } from './access/access.component';
 import { DeviceComponent } from './device/device.component';
 
+/* import AmplifyUIAngularModule  */
+import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { DeviceComponent } from './device/device.component';
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
+    AmplifyUIAngularModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,10 +13,8 @@ import { Devices } from './device/devices';
 })
 export class ApiService {
 
-  private BASE_URL = "https://9p0rr7ytga.execute-api.eu-west-2.amazonaws.com/dev/";
+  private BASE_URL = "https://b2o354de95.execute-api.eu-west-2.amazonaws.com/stage/";
   private EVENT_URL = this.BASE_URL + "alarmEvent";
-  private STATUS_URL = this.BASE_URL + "status";
-  private DAILY_URL = this.BASE_URL + "status";
   private MOTION_URL = this.BASE_URL + "motion";
   private ACCESS_URL = this.BASE_URL + "access";
   private FAULT_URL = this.BASE_URL + "fault";

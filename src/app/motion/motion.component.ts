@@ -11,7 +11,7 @@ export class MotionComponent implements OnInit {
 
   titles = ["ID", "Date"];
 
-  headers = ["motion_id", "created_date"];
+  headers = ["motion_id", "created_time"];
 
   received: Motions;
 

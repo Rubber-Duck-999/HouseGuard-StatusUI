@@ -10,9 +10,9 @@ import { Devices } from './devices';
 })
 export class DeviceComponent implements OnInit {
 
-  titles = ["ID", "Date", "Motion", "Granted", "Denied", "User"];
+  titles = ["ID", "Date", "Allowed", "Blocked", "Unknown"];
 
-  headers = ["device_id", "created_date", "motion_detected", "access_granted", "access_denied", "last_user"];
+  headers = ["device_id", "created_date", "allowed_devices", "blocked_devices", "unknown_devices"];
 
   received: Devices;
 

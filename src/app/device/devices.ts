@@ -1,7 +1,7 @@
 
 export class Devices {
     length: number;
-    devices: Device[];
+    device: Device[];
 }
 
 export class Device {
